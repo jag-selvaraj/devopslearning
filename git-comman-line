@@ -59,4 +59,34 @@ git reflog
   567  ls
   568  git add .
   569  git commit -m "added .gitignore"
+  ###git branching
+    573  git branch
+    ##inside calcy.py we have two lines
+  574  cat calcy.py
+  ##we will create subtract functionality for calcy program 
+  575  git branch subtract
+  576  git branch
+  ##to be in the particular branch you need to do checkout 
+  577  git checkout subtract
+  578  git branch
+  ##in the subrtact branch we will have the same code from which branch we moved
+  579  cat calcy.py
+##we will add a new line in the subtract branch
+  585  echo "we are adding subtract functionality to my calc application" >> calcy.py
+  ##this will show that in the subtract branch we have three lines 
+  586  cat calcy.py
+
+  589  git status
+  590  git add calcy.py
+  591  git commit -m "started with subtract branch"
+  ####once commited chec the head in the log it will show you are in which branch 
+  592  git log
+  #the below command will show three lines
+  593  cat calcy.py
+##we will move to the master branch 
+  594  git checkout master
+  595  git branch
+  ####check there only two lines. so any changes in the subtract bracnh all the files and folder will not be merged directly to the master branch 
+  596  cat calcy.py
+
 
