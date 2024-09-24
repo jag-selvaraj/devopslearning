@@ -24,4 +24,12 @@
   525  rm -rf .git
   526  git status
   527  ls
+  ####lets commit our code for the first time
+   530  git init
+  531  git status
+  532  git add calcy.py
+  533  git commit -m "we started the a calcy program"
+  534  git log
+  535  git status
+
 
