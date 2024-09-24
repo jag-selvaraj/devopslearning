@@ -3,3 +3,25 @@
   501  git config --global user.email "gopal1409@gmail.com"
   
   503  git config --global --list
+
+  #lets intialzed a directory
+   
+  510  mkdir project
+  511  cd project
+  512  touch DS_Strore
+  513  touch auth
+  514  touch secret
+  515  touch calcy.py
+  516  ls
+  517  echo "we started with a calcy program" > calcy.py
+  518  cat calcy.py
+  520  git status
+  ###this will intialized our git repo and create a folder called as .git which will keep track of all your versioing
+  521  git init
+  522  git status
+  523  ls -la
+  #if i delete teh folder we will loose all our versioing
+  525  rm -rf .git
+  526  git status
+  527  ls
+
