@@ -88,5 +88,12 @@ git reflog
   595  git branch
   ####check there only two lines. so any changes in the subtract bracnh all the files and folder will not be merged directly to the master branch 
   596  cat calcy.py
+##lets merge 
+ 599  git branch
+  600  cat calcy.py
+  which branch you want to merge provide the name of the branch
+  602  git merge subtract
+  ##now in the master branch you can see calcy.py have three lines
+  603  cat calcy.py
 
 
