@@ -44,4 +44,19 @@
 ##git diff will give me the modification of only the current file  
 ###to check all the modifiucation you have done till know
 git reflog
+###added gitignore file which will be used to untrack the remaining file 
+ 557  echo "DS_Store" > .gitignore
+  558  echo "*.tmp" >> .gitignore
+  559  echo "*.txt" >> .gitignore
+ 
+  561  echo "*auth" >> .gitignore
+  562  echo "*secret" >> .gitignore
+    565  echo "DS_Strore" >> .gitignore
+  563  cat .gitignore
+  564  git status
+
+  566  git status
+  567  ls
+  568  git add .
+  569  git commit -m "added .gitignore"
 
