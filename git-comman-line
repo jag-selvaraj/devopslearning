@@ -41,5 +41,7 @@
   544  git commit -m "added a new feature"
   ##now the git log will show the history
   545  git log
-
+##git diff will give me the modification of only the current file  
+###to check all the modifiucation you have done till know
+git reflog
 
