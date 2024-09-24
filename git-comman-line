@@ -31,5 +31,15 @@
   533  git commit -m "we started the a calcy program"
   534  git log
   535  git status
+##lets try to understand the difference between git diff and git status both will show the modifuication of the file 
+  538  git status
+  539  echo "added a new feature in my calcy program" >> calcy.py
+  540  cat calcy.py
+  541  git diff
+  542  git status
+  543  git add calcy.py
+  544  git commit -m "added a new feature"
+  ##now the git log will show the history
+  545  git log
 
 
