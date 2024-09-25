@@ -1,0 +1,9 @@
+##we will download the agent
+ mkdir myagent && cd myagent
+ wget https://vstsagentpackage.azureedge.net/agent/3.244.1/vsts-agent-linux-x64-3.244.1.tar.gz
+ tar zxvf vsts-agent-linux-x64-3.244.1.tar.gz
+ ####we will install some necessary package like java and maven
+sudo apt-get update  
+sudo apt install default-jdk 
+sudo apt install openjdk-21-jdk-headless 
+sudo apt install maven 
