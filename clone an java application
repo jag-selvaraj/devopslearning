@@ -1,0 +1,12 @@
+##lets clone the application from my repo
+git clone https://github.com/gopal1409/kyn-java-project.git
+cd kyn-java-project
+###once you clone my application you need to delete my refrence 
+rm -rf .git 
+##again need to reintialzed 
+git init
+git add .
+git commit -m "intialzied the java application"
+git status
+git log 
+###you can see a version has been created in your local machine
