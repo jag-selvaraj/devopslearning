@@ -30,7 +30,7 @@ stages:
         steps:
           - task: CopyFiles@2
             inputs:
-              SourceFolder: '$(System.DefaultWorkingDirectory	)'
+              SourceFolder: '$(System.DefaultWorkingDirectory)'
               Contents: '**'
               TargetFolder: '$(build.ArtifactStagingDirectory)'
 
