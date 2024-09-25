@@ -26,6 +26,7 @@ stages:
               mavenAuthenticateFeed: false
               effectivePomSkip: false
               sonarQubeRunAnalysis: false
+              goals: 'package'
       - job: copyartifact
         dependsOn: buildjob
         timeoutInMinutes: 5
