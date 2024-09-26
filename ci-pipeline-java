@@ -70,6 +70,24 @@ stages:
               mavenAuthenticateFeed: false
               effectivePomSkip: false
               sonarQubeRunAnalysis: false
+  - stage: sonar 
+    jobs:
+      - job: sonaranalysis
+        steps: 
+          - task: SonarQubePrepare@6
+            inputs:
+              SonarQube: 'sonar'
+              scannerMode: 'Other'
+              extraProperties: |
+                sonar.projectKey=ken-java-project_ken-java-project_12d74d7b-3f75-43cd-a053-9b497eba4c1f
+                sonar.projectName=ken-java-project
+      - job: sonarqualitygate 
+        dependsOn: sonaranalysis
+        steps:
+          - task: SonarQubePublish@6
+            inputs:
+              pollingTimeoutSec: '300'
+             
           
 
     
