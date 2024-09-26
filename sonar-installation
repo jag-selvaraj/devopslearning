@@ -1,0 +1,9 @@
+##lets install sonar
+##first we will install docker
+##to dot he same you need to be root user
+sudo -i 
+###after that go to this site 
+https://docs.docker.com/engine/install/ubuntu/
+
+##once the docker installation complete
+docker --version
