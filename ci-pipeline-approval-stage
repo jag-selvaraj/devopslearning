@@ -95,4 +95,16 @@ stages:
               az appservice plan create -g $(rg) -n myapp-service-plan --is-linux
                                                        
                          
-              az webapp create -g $(rg) -p myapp-service-plan -n devopstestgopal1 --runtime "JAVA|8-jre8" #change it to some unique name
+              az webapp create -g $(rg) -p myapp-service-plan -n devopstestgopal1 --runtime "JAVA|8-jre8"
+  - stage: deploy
+    jobs:
+      - job:
+        steps:
+          - task: AzureRmWebAppDeployment@4
+            inputs:
+                ConnectionType: 'AzureRM'
+                azureSubscription: 'ado' #check the previous ado connection name so chang eit accrodingly
+                appType: 'webAppLinux'
+                WebAppName: 'devopstestgopal1' #change this this is the name of web app
+                packageForLinux: '$(Pipeline.Workspace)/**/*.jar'
+        
