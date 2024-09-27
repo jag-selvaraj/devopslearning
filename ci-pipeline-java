@@ -28,14 +28,10 @@ stages:
               sonarQubeRunAnalysis: false
               goals: 'package'
           
-      - job: copyartifact
-        dependsOn: buildjob
-        timeoutInMinutes: 5
-        steps:
           - task: CopyFiles@2
             inputs:
               SourceFolder: '$(System.DefaultWorkingDirectory)'
-              Contents: '**'
+              Contents: '**/target/*.?(war|jar)'
               TargetFolder: '$(build.ArtifactStagingDirectory)'
           - task: PublishBuildArtifacts@1
             inputs:
