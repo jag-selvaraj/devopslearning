@@ -67,27 +67,13 @@ stages:
               mavenAuthenticateFeed: false
               effectivePomSkip: false
               sonarQubeRunAnalysis: false
-  - stage: sonar 
+  - stage: approval
     jobs:
-      - job: sonaranalysis
+      - job: approval
+        timeoutInMinutes: 5
+        pool: server #this stage will be run with azure devops email alerts
         steps: 
-          - task: SonarQubePrepare@6
+          - task: ManualValidation@1
             inputs:
-              SonarQube: 'sonar'
-              scannerMode: 'Other'
-              extraProperties: |
-                sonar.projectKey=ken-java-project_ken-java-project_12d74d7b-3f75-43cd-a053-9b497eba4c1f
-                sonar.projectName=ken-java-project
-          
-          - task: Maven@4
-            inputs:
-              mavenPomFile: 'pom.xml'
-              goals: 'test'
-              publishJUnitResults: false
-              javaHomeOption: 'JDKVersion'
-              mavenVersionOption: 'Default'
-              mavenAuthenticateFeed: false
-              effectivePomSkip: false
-              sonarQubeRunAnalysis: true
-              sqMavenPluginVersionChoice: 'latest'
-          
+              notifyUsers: 'gopal1409@gmail.com'
+              instructions: 'approve the task'
