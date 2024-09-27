@@ -1,4 +1,5 @@
 # Maven
+
 # Build your Java project and run tests with Apache Maven.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
@@ -10,7 +11,8 @@ trigger: #when you push your code to the repo automatically they pipel should st
 
 pool: default
  # vmImage: ubuntu-latest
-
+variables:
+  rg: 'web-rg'
 stages:
   - stage: build
     jobs:
@@ -77,3 +79,20 @@ stages:
             inputs:
               notifyUsers: 'gopal1409@gmail.com'
               instructions: 'approve the task'
+  - stage: environment
+    jobs: 
+      - job: appservice 
+        steps:
+        - task: AzureCLI@2
+          inputs:
+            azureSubscription: 'ado' #if you have change the connection replace it here
+            scriptType: 'bash'
+            scriptLocation: 'inlineScript'
+            inlineScript: |
+              az group create --location eastus2 --name $(rg)
+                                                       
+                      
+              az appservice plan create -g $(rg) -n myapp-service-plan --is-linux
+                                                       
+                         
+              az webapp create -g $(rg) -p myapp-service-plan -n devopstestgopal1 --runtime "JAVA|8-jre8" #change it to some unique name
